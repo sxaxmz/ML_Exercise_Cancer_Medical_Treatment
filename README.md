@@ -58,6 +58,8 @@ Contains the clinical evidence (text) that human experts/pathologists use to cla
 
 While processing the data and training the model an approach was followed comparing the model's performance using multiple alpha's to help determine the best alpha (learning rate) to train the classifier on.
 
+![Log Loss Model Comparison][Log_Loss_Models.png]
+
 Log Loss comparison across train, cross-validation, and test sets.
 
 | Model                                             | Train Set Loss | Cross-Validation Set Loss | Test Set Loss | Classification Error |
