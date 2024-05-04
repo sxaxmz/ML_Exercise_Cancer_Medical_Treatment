@@ -29,7 +29,7 @@ Files:
 
 ---
 
-Dataset link on Kaggle: [Memorial Sloan Kettering Cancer Center (MSKCC) Personalized Medicine: Redefining Cancer Treatment][https://www.kaggle.com/competitions/msk-redefining-cancer-treatment]
+Dataset link on Kaggle: [Memorial Sloan Kettering Cancer Center (MSKCC) Personalized Medicine: Redefining Cancer Treatment](https://www.kaggle.com/competitions/msk-redefining-cancer-treatment)
 
 The data that was preprocessed and trained in the exercise belongs to the following files:
 * training_variants.zip (ID, Gene, Variations, Class)
@@ -58,7 +58,11 @@ Contains the clinical evidence (text) that human experts/pathologists use to cla
 
 While processing the data and training the model an approach was followed comparing the model's performance using multiple alpha's to help determine the best alpha (learning rate) to train the classifier on.
 
-![Log Loss Model Comparison][Log_Loss_Models.png]
+![Log Loss Model Comparison](Log_Loss_Models.png)
+
+To choose the best alpha hyperparameter for the model's training, various alphas were tested on the model, and the one that presented the lowest error measure (log loss) was selected. The above graph plots the error measure log loss for each of the tested alphas, below is the best alpha used for each of the models.
+
+
 
 Log Loss comparison across train, cross-validation, and test sets.
 
@@ -71,6 +75,7 @@ Log Loss comparison across train, cross-validation, and test sets.
 | SVM (Linear) (One Hot Encoding)                   | 0.74           | 1.13                      | 1.14          | 34.21                |
 | RF (One Hot Encoding)                             | 0.71           | 1.14                      | 1.12          | 38.34                |
 | RF (Response Encoding)                            | 0.05           | 1.28                      | 1.30          | 48.68                |
+| Stacking Models (One Hot Encoding)                | 0.91           | 1.18                      | 1.20          | 35.63                |
 
 An obvious overfitting can be noted on the Rd model using the response encoded data based on the huge gap in the log loss between the training set (very low) and the other sets (cross-validation and test), also it has the highest number of misclassified points 48.68 (0.4868 x 100).
 
