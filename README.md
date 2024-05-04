@@ -92,4 +92,4 @@ An obvious overfitting can be noted on the Rd model using the response encoded d
 
 Various metrics can have different meanings and the decision on which model to choose depends on our objective, if the objective is to choose a model that has the highest accuracy then we would choose the model that has the lowest classification error which is KNN with the lowest number of misclassified points. If the objective is to choose the model that has learned well and can distinguish in terms of likelihood and predict better in correspondence to the actual value we would choose LR with balanced classes as it has the lowest test set loss with a relatively low number of misclassified data points of 35.33 (0.3533 x 100) and low training set log loss of 0.61.
 
-
+![Precision and Recall Matrix (KNN & LR Balanced)](percision_recall_matrix.png)
