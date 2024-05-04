@@ -16,7 +16,8 @@ Built Classifiers:
 * Random Forest (RF)
 * Support Vector Machine (SVM)
 * Calibrated Classifier
-* Stacking Approach (Multiple Models Together)
+* Stacking Approach (Multiple Models Together -LR, SVM, NB-)
+* Maximum Voting Classifier (MVC) Approach (3 models and chooses the one with the lowest error measure)
 
 Files:
 
@@ -62,7 +63,16 @@ While processing the data and training the model an approach was followed compar
 
 To choose the best alpha hyperparameter for the model's training, various alphas were tested on the model, and the one that presented the lowest error measure (log loss) was selected. The above graph plots the error measure log loss for each of the tested alphas, below is the best alpha used for each of the models.
 
-
+| Model                                             | Best Alpha |
+|---------------------------------------------------|------------|
+| Naive Bayes (One Hot Encoding)                    | 0.0001     |
+| KNN (Response Encoding)                           | 11         |
+| LR (Without Balancing Classes) (One Hot Encoding) | 0.001      |
+| LR (With Balancing Classes) (One Hot Encoding)    | 0.001      |
+| SVM (Linear) (One Hot Encoding)                   | 0.01       |
+| RF (One Hot Encoding)                             | 200        |
+| RF (Response Encoding)                            | 100        |
+| Stacking Models (One Hot Encoding)                | 0.100000   |
 
 Log Loss comparison across train, cross-validation, and test sets.
 
@@ -75,7 +85,8 @@ Log Loss comparison across train, cross-validation, and test sets.
 | SVM (Linear) (One Hot Encoding)                   | 0.74           | 1.13                      | 1.14          | 34.21                |
 | RF (One Hot Encoding)                             | 0.71           | 1.14                      | 1.12          | 38.34                |
 | RF (Response Encoding)                            | 0.05           | 1.28                      | 1.30          | 48.68                |
-| Stacking Models (One Hot Encoding)                | 0.91           | 1.18                      | 1.20          | 35.63                |
+| Stacking Models (One Hot Encoding)                | 0.66           | 1.11                      | 1.11          | 35.78                |
+| Maximum Voting Classifier (One Hot Encoding)                | 0.91           | 1.18                      | 1.20          | 35.63                |
 
 An obvious overfitting can be noted on the Rd model using the response encoded data based on the huge gap in the log loss between the training set (very low) and the other sets (cross-validation and test), also it has the highest number of misclassified points 48.68 (0.4868 x 100).
 
